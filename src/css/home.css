@@ -1,5 +1,6 @@
 .welcome {
     display: flex;
+    align-items: center;
     background-image: url(../../public/assets/home3.png);
     background-size: cover;
     background-position: center center;
@@ -12,11 +13,10 @@
     font-family: 'Anonymous Pro', monospace;
     color: #00f9e8;
     font-size: 100px;
-    padding-bottom: 0px;
-    margin: auto 0px;
     transition: 1s;
     cursor: default;
     text-decoration: none;
+    text-shadow: -1px 1px 10px rgba(0, 0, 0, 0.2)
 }
 
 .welcome-text:hover {
@@ -37,6 +37,7 @@
     width: 38%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 15px;
 }
@@ -44,7 +45,6 @@
 .the-name {
     font-weight: bold;
     font-size: 40px;
-
 }
 
 .name-description {
@@ -56,8 +56,8 @@
 .name-image {
     margin-top: 50px;
     border-radius: 20px;
-    width: 30vw;
-    height: 70vh;
+    width: 35vw;
+    height: 80vh;
     background-image: url(../../public/assets/home1.png);
     background-size: cover;
     background-position: center;
@@ -110,13 +110,14 @@
 .culture-image {
     border-radius: 20px;
     margin-top: 50px;
-    width: 30vw;
-    height: 70vh;
+    width: 35vw;
+    height: 80vh;
     background-image: url(../../public/assets/home2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 @media screen and (max-width: 1200px) {
     .the-name {
         font-size: 35px;
@@ -127,21 +128,18 @@
         line-height: 30px;
     }
 
-    .name-image {
-        height: 75vh;
-    }
+    .name-image {}
+
     .cultures-title {
         font-size: 35px;
     }
-    
+
     .cultures-info {
         font-size: 20px;
         line-height: 30px;
     }
-    
-    .culture-image {
-        height: 75vh;
-    }
+
+    .culture-image {}
 
 }
 
@@ -159,15 +157,16 @@
     .name-image {
         height: 70vh;
     }
+
     .cultures-title {
         font-size: 30px;
     }
-    
+
     .cultures-info {
         font-size: 18px;
         line-height: 25px;
     }
-    
+
     .culture-image {
         height: 70vh;
     }
@@ -175,13 +174,15 @@
 }
 
 @media screen and (max-width: 800px) {
-    .welcome-text{
+    .welcome-text {
         font-size: 15vw;
     }
+
     .name-wrapper {
         flex-direction: column;
         align-items: center;
     }
+
     .name {
         width: 100%;
         gap: 20px;
@@ -197,28 +198,31 @@
     }
 
     .name-image {
-        max-width: 83vw;
-        height: 20%;
+        width: 85%;
+        height: 70vh;
     }
+
     .culture-wrapper {
         flex-direction: column-reverse;
         align-items: center;
     }
+
     .culture {
         width: 100%;
         gap: 20px;
     }
+
     .cultures-title {
         font-size: 30px;
     }
-    
+
     .cultures-info {
         font-size: 22px;
         line-height: 30px;
     }
-    
+
     .culture-image {
-        max-width: 83vw;
-        height: 20%;
+        width: 85%;
+        height: 70vh;
     }
 }

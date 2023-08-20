@@ -51,6 +51,12 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Streetlight</title>
+        <meta name="description"
+          content="Personal stories of growth and transformation, overcoming obstacles in our journey as we relate to icons of the world." />
+      </Helmet>
       <h1 className="blog-title">blog</h1>
       <div className="blog-posts">
         {posts.map((p, i) => (

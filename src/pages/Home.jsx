@@ -32,23 +32,37 @@ export default function Home() {
   return (
     <>
       <div className={`home`}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Streetlight</title>
+          <meta name="description"
+            content="Personal stories of growth and transformation, overcoming obstacles in our journey as we relate to icons of the world." />
+        </Helmet>
         <div class="welcome">
-          <h1 class={`welcome-text`}>the. Streetlight</h1>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <h1 class={`welcome-text`}>the. Streetlight</h1>
+          </motion.div>
+
         </div>
         <div className="name-wrapper">
           <section className="name">
-            <h1 class="the-name">the. Name</h1>
-            <p class="name-description">The "Streetlight" was a metaphor used by a character named Usnavi from a broadway called "In The Heights" written by Lin-Manuel Miranda and Quiara Alegría Hudes. The "Streetlight" is depicted as a negative metaphor, an inanimate object stuck to the sides of every street. It represented the characters' path- stuck in the same spot serving the same purpose as time goes on. As the characters face various challenges and changes, the metaphor of the streetlight is used to
-              convey the idea of guidance, hope, and continuity. Welcome to The Streetlight where we illuminate the stories of the people of the street.
-              <br />
-            </p>
-            <button class="blog-button">Blog</button>
+                <h1 class="the-name">the. Name</h1>
+              <p class="name-description">The "Streetlight" was a metaphor used by a character named Usnavi from a broadway called "In The Heights" written by Lin-Manuel Miranda and Quiara Alegría Hudes. The "Streetlight" is depicted as a negative metaphor, an inanimate object stuck to the sides of every street. It represented the characters' path- stuck in the same spot serving the same purpose as time goes on. As the characters face various challenges and changes, the metaphor of the streetlight is used to
+                convey the idea of guidance, hope, and continuity. Welcome to The Streetlight where we illuminate the stories of the people of the street.
+                <br />
+              </p>
+              <button class="blog-button">Blog</button>
+
           </section>
           <div className="name-image"></div>
         </div>
 
         <div className="culture-wrapper">
-        <div className="culture-image"></div>
+          <div className="culture-image"></div>
           <section class="culture">
             <h1 class="cultures-title">the. Culture</h1>
             <p class="cultures-info"> The Streetlight's culture encourages to and aim to promote an environment where
