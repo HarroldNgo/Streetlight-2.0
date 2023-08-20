@@ -1,0 +1,38 @@
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border: 2px solid red;
+}
+.footer-main {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    background: black;
+    height: 200px;
+    gap: 50px;
+}
+.footer-logo {
+    height: 100%;
+    filter: invert();
+}
+.footer-nav {
+}
+.footer-subscribe {
+
+}
+.footer-bottom {
+    display: flex;
+    background-color: #202020;
+    justify-content: center;
+    gap: 300px;
+    padding: 5px;
+}
+.footer-bottom-copyright {
+
+}
+.footer-bottom-socials {
+    display: flex;
+    gap: 30px;
+}

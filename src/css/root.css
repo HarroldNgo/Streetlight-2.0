@@ -1,28 +1,42 @@
 * {
-    font-family: 'Cabin', sans-serif;
-    margin: 0;
-    list-style: none;
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  body {
-    --primary-color: #000;
-    --secondary-color: #536390;
-    --bg-color: #fff;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
 
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-  }
-  body.dark {
-    --primary-color: #fff;
-    --secondary-color: #539085;
-    --bg-color: #000;
-    
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-  }
+body {
+  --primary-color: #000;
+  --secondary-color: #536390;
+  --bg-color: #fff;
 
-  .socials.dark {
-    filter: invert(100%);
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+body.dark {
+  --primary-color: #fff;
+  --secondary-color: #539085;
+  --bg-color: #000;
+
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+.socials.dark {
+  filter: invert(100%);
+}
+.hidden {
+  opacity: 0;
+}
+
+@media(prefers-reduced-motion) {
+  .fade-in-on-scroll-hidden {
+    opacity: 0;
+    transition: all 1s;
   }
+  .fade-in-on-scroll {
+    opacity: 1;
+  }
+}

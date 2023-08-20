@@ -1,47 +1,66 @@
 import { Link, useLocation } from "react-router-dom"
 import "../css/header.css"
-import { useEffect, useState } from "react"
-import Modal from "./PopUp"
-import { DarkModeToggle } from './DarkModeToggle'
-import { useDarkMode } from "../useHooks/useDarkMode";
+import { useEffect, useState, useRef } from "react"
+import MobileBar from "./MobileBar"
 
 export default function Header() {
     const location = useLocation();
-    const [openModal, setOpenModal] = useState(false);
-    const { isDark } = useDarkMode();
+    const [openMobileBar, setMobileBar] = useState(false);
+    const [isScrolling, setIsScrolling] = useState(false);
+    const ref = useRef(null);
+    const handleOutsideClick = (e) => {
+        if (ref.current && !ref.current.contains(e.target)) {
+            setMobileBar(false);
+        }
+    };
+    useEffect(() => {
+        document.addEventListener("mousedown", handleOutsideClick);
+        return () => {
+          document.removeEventListener("mousedown", handleOutsideClick);
+        };
+      }, []);
+    useEffect(() => {
+        let scrollTimeout;
+        const scrollHide = () => {
+            setIsScrolling(true)
+
+            clearTimeout(scrollTimeout)
+            scrollTimeout = setTimeout(() => {
+                setIsScrolling(false)
+            }, 1200)
+        };
+        window.addEventListener("scroll", scrollHide);
+        return () =>
+            window.removeEventListener("scroll", scrollHide);
+    }, [])
+
 
     return (
-        <div className="header">
+        <header className="header">
             <div className="socials">
-                <a href="https://www.instagram.com/streetlightblog/" target="_blank" rel="noopener noreferrer"><img src='/assets/insta.png' style={isDark ? { filter: 'invert(100%)' } : { filter: 'none' }} alt="instagram" /></a>
+                <a href="https://www.instagram.com/streetlightblog/" target="_blank">
+                    <img src="assets/insta-logo.png" class="insta-logo" />
+                </a>
+                <a href="https://www.youtube.com/@StreetlightUs" target="_blank">
+                    <img src="assets/ty-logo.png" class="youtube-logo" />
+                </a>
             </div>
-            <div className="title">
-                <div className="darkmode-wrapper">
-                    <DarkModeToggle />
-                </div>
-                <div className="bars-wrapper">
-                    <Link><img src="/assets/fontbarc.webp" style={isDark ? { filter: 'invert(100%)' } : { filter: 'none' }} alt="nav-bars" className="bars" onClick={() => setOpenModal(true)} /></Link>
-                </div>
-                <Link to="/"><img className="titlelogo" src={isDark ? "/assets/mobile-titledarkmode.webp" : "/assets/mobile-titlelightmode.webp"} alt="titlelogo" /></Link>
-                <Link to="/"><h1 className="titletext">TREETLIGHT</h1></Link>
 
+            <div className={`navbar ${isScrolling ? "header-bar" : ""}`}>
+                <div className="bars-wrapper">
+                    <img src="/assets/fontbarc.webp" alt="nav-bars" className="bars" onClick={() => { setMobileBar(true) }} />
+                </div>
+                <img src="assets/newlogo-black.png" class="logo" />
+                <div class="menu">
+                    <ul>
+                        <li><Link to="/" >HOME</Link></li>
+                        <li><Link to="/blog" >BLOG</Link></li>
+                        <li><a href="https://store.streetlightblog.com/">STORE</a></li>
+                    </ul>
+                </div>
             </div>
-            <Modal DarkMode={isDark} open={openModal} onClose={() => setOpenModal(false)} />
-            <div className="nav">
-                {location.pathname === '/' ?
-                    <div className="latest-wrap">
-                        <p className="latest">FEATURED</p>
-                    </div> : <div className="latest-wrap" style={{ opacity: 0 }}>
-                        <p className="latest">FEATURED</p>
-                    </div>
-                }
-                <ul>
-                    <li><Link className={"nav-option " + (isDark ? "darkhov" : "")} to="/">HOME</Link></li>
-                    <li className="cats"><Link className={"nav-option " + (isDark ? "darkhov" : "")} to="/categories">CATEGORIES</Link></li>
-                    <li><a className={"nav-option " + (isDark ? "darkhov" : "")} href="/portfolio">PORTFOLIO</a></li>
-                    <li><Link className={"nav-option " + (isDark ? "darkhov" : "")} to="/about">ABOUT</Link></li>
-                </ul>
-            </div>
-        </div>
+            <MobileBar innerRef={ref} open={openMobileBar} onClose={() => setMobileBar(false)} />
+        </header>
+
     )
 }

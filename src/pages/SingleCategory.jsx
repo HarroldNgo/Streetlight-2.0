@@ -5,12 +5,12 @@ import * as api from "../Api"
 import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 
-import Poetry from '/assets/Poetry.mp4'
+/*import Poetry from '/assets/Poetry.mp4'
 import Movies from '/assets/Movies.mp4'
 import Stories from '/assets/Stories.mp4'
 import PoetryM from '/assets/PoetryM.mp4'
 import MoviesM from '/assets/MoviesM.mp4'
-import StoriesM from '/assets/StoriesM.mp4'
+import StoriesM from '/assets/StoriesM.mp4'*/
 
 export default function SingleCategory() {
     const location = useLocation();

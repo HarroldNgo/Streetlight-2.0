@@ -5,12 +5,9 @@ import loadable from '@loadable/component'
 
 //Pages
 import Home from './pages/Home'
-import About from './pages/About'
-import Categories from './pages/Categories'
+import Blog from './pages/Blog'
 //import Missing from './pages/Missing'
 import SinglePost from './pages/SinglePost'
-import SingleCategory from './pages/SingleCategory'
-import Portfolio from './pages/Portfolio'
 
 //Admin
 //import Admin from './pages/Admin'
@@ -44,13 +41,8 @@ const router = createBrowserRouter(
     <Route path='/' element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="loginadmin" element={<Login />} />
-      <Route path='about' element={<About />} />
-      <Route path='categories' element={<Categories />} />
-      <Route path='categories/people' element={<SingleCategory />} />
-      <Route path='categories/stories' element={<SingleCategory />} />
-      <Route path='categories/movies' element={<SingleCategory />} />
+      <Route path='blog' element={<Blog />}/>
       <Route path="post/:title" element={<SinglePost />} />
-      <Route path="portfolio/*" element={<Portfolio />} />
 
       <Route path='admin' element={<AdminLayout />}>
         <Route index element={<Admin />} />

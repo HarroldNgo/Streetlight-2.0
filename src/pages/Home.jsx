@@ -1,15 +1,15 @@
 import "../css/home.css"
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import * as api from '../Api.jsx'
 import Slider from "react-slick";
 import usePostQuery from '../useHooks/usePostQuery'
 import { Link, useNavigate } from "react-router-dom"
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import { motion } from "framer-motion"
 
 export default function Home() {
   const PF = "https://res.cloudinary.com/dmluqp41s/image/upload/"
-  const [dragging, setDragging] = useState(false);
 
   const postsQuery = () => ({
     queryKey: ['postsF'],
@@ -27,64 +27,44 @@ export default function Home() {
   }
   usePostQuery(posts)
 
-  var settings = {
-    initialSlide: Math.floor(Math.random() * 3),
-    autoplay: true,
-    autoplaySpeed: 3000,
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    afterChange: () => setDragging(false),
-    onSwipe: () => setDragging(true)
-  }
+
 
   return (
     <>
-      <div className="home">
-        <div className="home-desktop">
-          <div className="post-wrapper">
-            <Slider {...settings}>
-              {posts.map(post => (
-                <div key={post._id} className="spost">
-                  <div className="hover">
-                    <h4 className="hovertitle">{post.title}</h4>
-                    <p className="hovertext">
-                      {(post.desc).split(/\r?\n/).slice(0, post.desc.split(/\r?\n/).length / 2).join("\n")}
-                      <br />
-                      <span style={{ fontSize: 25 }}>{(post.desc).split(/\r?\n/).slice(post.desc.split(/\r?\n/).length / 2, post.desc.split(/\r?\n/).length).join("\n")}</span>
-                    </p>
-                  </div>
-                  <Link
-                    className="slider-link"
-                    to={`/post/${post.slug}`}
-                    onClick={(e) => dragging && e.preventDefault()}
-                    state={post} >
-                    <img src={PF + post.photo + ".png"} alt="" className={"slider-image " + (post.comingsoon ? "grey" : "")} />
-                  </Link>
-                </div>
-              ))}
-            </Slider>
-          </div>
+      <div className={`home`}>
+        <div class="welcome">
+          <h1 class={`welcome-text`}>the. Streetlight</h1>
         </div>
-        <div className="home-mobile">
-          {posts.slice(0, 3).map(post => (
-            <div key={post._id} className="spost">
-              <div className="hover">
-                <h4 className="hovertitle">{post.title}</h4>
-                <p className="hovertext">
-                  {(post.desc).split(/\r?\n/).slice(0, post.desc.split(/\r?\n/).length / 2).join("\n")}
-                  <br />
-                  <span style={{ fontSize: 25 }}>{(post.desc).split(/\r?\n/).slice(post.desc.split(/\r?\n/).length / 2, post.desc.split(/\r?\n/).length).join("\n")}</span>
-                </p>
-              </div>
-              <a className="slider-link" href={`/post/${post.slug}`}>
-                <img src={PF + post.photo + ".png"} alt="" className={"slider-image " + (post.comingsoon ? "grey" : "")} />
-              </a>
-            </div>
-          ))}
+        <div className="name-wrapper">
+          <section className="name">
+            <h1 class="the-name">the. Name</h1>
+            <p class="name-description">The "Streetlight" was a metaphor used by a character named Usnavi from a broadway called "In The Heights" written by Lin-Manuel Miranda and Quiara Alegría Hudes. The "Streetlight" is depicted as a negative metaphor, an inanimate object stuck to the sides of every street. It represented the characters' path- stuck in the same spot serving the same purpose as time goes on. As the characters face various challenges and changes, the metaphor of the streetlight is used to
+              convey the idea of guidance, hope, and continuity. Welcome to The Streetlight where we illuminate the stories of the people of the street.
+              <br />
+            </p>
+            <button class="blog-button">Blog</button>
+          </section>
+          <div className="name-image"></div>
         </div>
-        <p className="copyright">copyright streetlight 2023 // contact</p>
+
+        <div className="culture-wrapper">
+        <div className="culture-image"></div>
+          <section class="culture">
+            <h1 class="cultures-title">the. Culture</h1>
+            <p class="cultures-info"> The Streetlight's culture encourages to and aim to promote an environment where
+              differences are celebrated
+              and cherished. By providing a platform for diverse voices, we hope to break down barriers, challenge
+              stereotypes, and
+              foster a sense of interconnectedness among our global audience. We feature blogs and stories from people of
+              different
+              cutures and religions, together we can create a community of mutual respect and appreciation for the
+              beautiful tapestry of
+              cultures and beliefs that make up our world.
+            </p>
+          </section>
+        </div>
+
+
       </div>
     </>
   )

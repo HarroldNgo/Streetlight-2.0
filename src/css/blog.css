@@ -1,0 +1,79 @@
+.header-image {
+    background-image: url(assets/sky.png);
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blog-title {
+    font-size: 50px;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.blog-post {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    background: black;
+}
+
+.blog-post:hover .blog-post-image {
+    opacity: 0.2;
+}
+
+.blog-post-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.blog-post-title {
+    position: absolute;
+    bottom: 0px;
+    text-align: left;
+    font-size: 1.8em;
+    padding: 25px;
+}
+
+.blog-post-date {
+    position: absolute;
+    padding: 25px;
+}
+
+.blog-post-share {
+    position: absolute;
+    filter: invert();
+    top: 0px;
+    right: 0px;
+    margin: 25px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.blog-post-image {
+    width: 100%;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 600px) {
+    .blog-posts {}
+
+    .blog-post {}
+
+    .blog-post-image {}
+}
