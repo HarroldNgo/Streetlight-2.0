@@ -1,4 +1,4 @@
-import "../css/Blog.css"
+import "../css/blog.css"
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import * as api from '../Api.jsx'
