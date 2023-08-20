@@ -1,6 +1,6 @@
 .welcome {
     display: flex;
-    background-image: url(assets/home3.png);
+    background-image: url(../../public/assets/home3.png);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -58,7 +58,7 @@
     border-radius: 20px;
     width: 30vw;
     height: 70vh;
-    background-image: url(assets/home1.png);
+    background-image: url(../../public/assets/home1.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -112,7 +112,7 @@
     margin-top: 50px;
     width: 30vw;
     height: 70vh;
-    background-image: url(assets/home2.png);
+    background-image: url(../../public/assets/home2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
