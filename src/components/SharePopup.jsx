@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/SharePopup.css'
+import '../css/sharepopup.css'
 import {
     TwitterShareButton,
     TwitterIcon,
