@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { Helmet } from "react-helmet";
 import SharePopup from "../components/SharePopup"
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion"
 
 export default function Home() {
   const PF = "https://res.cloudinary.com/dmluqp41s/image/upload/"
@@ -57,10 +58,18 @@ export default function Home() {
         <meta name="description"
           content="Personal stories of growth and transformation, overcoming obstacles in our journey as we relate to icons of the world." />
       </Helmet>
-      <h1 className="blog-title">blog</h1>
+      <motion.h1 className="blog-title"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >blog</motion.h1>
       <div className="blog-posts">
         {posts.map((p, i) => (
-          <div className="blog-post">
+          <motion.div className="blog-post"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: i*0.2 }}
+          >
             <div className="blog-post-text">
               <p className="blog-post-date">{formattedDate.format(new Date(p.createdAt))}</p>
               <h1 className="blog-post-title">{p.title}</h1>
@@ -72,7 +81,7 @@ export default function Home() {
               setOpenShare(true)
               setSharePost(`https://streetlightblog.com/post/${p.slug}`)
             }} />
-          </div>
+          </motion.div>
 
         ))}
       </div>

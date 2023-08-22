@@ -51,7 +51,7 @@
   position: fixed;
   top: 0;
   left: 0%;
-  width: 100%;
+  width: 300%;
   height: 100%;
   opacity: 1;
   z-index: 1;
@@ -60,28 +60,21 @@
   -webkit-animation-duration: 0.5s;
   animation-name: slideright;
   animation-duration: 0.5s;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .overlay-background {
-  background: rgba(0, 0, 0, 0.5);
-  transition: 0.5s;
-  transition-delay: 0.35s;
+
 }
 
 .overlay-not-visible {
-  left: -200%;
-  background: unset;
-  opacity: 0;
-  -webkit-animation-name: slideleft;
-  -webkit-animation-duration: 0.5s;
-  animation-name: slideleft;
-  animation-duration: 0.5s;
+  display: none;
 }
 
 .mobile-bar-wrapper {
   position: relative;
   height: 100%;
-  width: 75%;
+  width: 75vw;
   top: 0px;
   left: 0%;
   background-color: white;
