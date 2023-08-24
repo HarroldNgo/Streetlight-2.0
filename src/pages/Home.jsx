@@ -56,6 +56,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
             <h1 class={`welcome-text`}>the<br />Streetlight</h1>
@@ -67,6 +68,7 @@ export default function Home() {
             <motion.h1 class="the-name"
               initial={{ opacity: 0, translateX: -200 }}
               whileInView={{ opacity: 1, translateX: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.75 }}
             >
               the. Name
@@ -75,41 +77,50 @@ export default function Home() {
             <motion.p class="name-description"
               initial={{ opacity: 0, translateX: -200 }}
               whileInView={{ opacity: 1, translateX: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.75 }}
             >The "Streetlight" was a metaphor used by a character named Usnavi from a broadway called "In The Heights" written by Lin-Manuel Miranda and Quiara Alegría Hudes. The "Streetlight" is depicted as a negative metaphor, an inanimate object stuck to the sides of every street. It represented the characters' path- stuck in the same spot serving the same purpose as time goes on. As the characters face various challenges and changes, the metaphor of the streetlight is used to
               convey the idea of guidance, hope, and continuity. Welcome to The Streetlight where we illuminate the stories of the people of the street.
               <br />
             </motion.p>
-            <motion.button class="blog-button"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.75 }}
-            >Blog</motion.button>
+            <Link to="/blog">
+              <motion.button class="blog-button"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.75 }}
+              >Blog</motion.button>
+            </Link>
+
 
           </section>
           <motion.div className="name-image"
             initial={{ opacity: 0, translateX: 300 }}
             whileInView={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.75, delay: 0.2}}
+            viewport={{ once: true }}
+            transition={{ duration: 0.75, delay: 0.2 }}
           ></motion.div>
         </div>
 
         <div className="culture-wrapper">
           <motion.div className="culture-image"
-          initial={{ opacity: 0, translateX: -300 }}
-          whileInView={{ opacity: 1, translateX: 0 }}
-          transition={{ duration: 0.75, delay: 0.2}}
+            initial={{ opacity: 0, translateX: -300 }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.75, delay: 0.2 }}
           ></motion.div>
           <section class="culture">
             <motion.h1 class="cultures-title"
-            initial={{ opacity: 0, translateX: 200 }}
-            whileInView={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.75 }}
+              initial={{ opacity: 0, translateX: 200 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.75 }}
             >the. Culture</motion.h1>
             <motion.p class="cultures-info"
-            initial={{ opacity: 0, translateX: 200 }}
-            whileInView={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.75 }}
+              initial={{ opacity: 0, translateX: 200 }}
+              whileInView={{ opacity: 1, translateX: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.75 }}
             > The Streetlight's culture encourages to and aim to promote an environment where
               differences are celebrated
               and cherished. By providing a platform for diverse voices, we hope to break down barriers, challenge
