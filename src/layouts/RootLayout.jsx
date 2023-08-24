@@ -11,7 +11,7 @@ export default function RootLayout() {
   return (
     <div className="root-layout">
       <Header />
-      <div class={path ? "header-image" : "header-image-hidden"}/>
+      <div class={path ? "header-image" : "header-image-hidden"} />
       <main>
         <Outlet />
       </main>

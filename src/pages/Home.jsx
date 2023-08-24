@@ -58,7 +58,7 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <h1 class={`welcome-text`}>the. Streetlight</h1>
+            <h1 class={`welcome-text`}>the<br />Streetlight</h1>
           </motion.div>
         </div>
 

@@ -1,3 +1,6 @@
+.home {
+    overflow: hidden;
+}
 .welcome {
     display: flex;
     align-items: center;
@@ -13,8 +16,10 @@
     font-family: 'Anonymous Pro', monospace;
     color: #00f9e8;
     font-size: 100px;
+    text-align: left;
     transition: 1s;
     cursor: default;
+    margin: 20px;
     text-decoration: none;
     text-shadow: -1px 1px 10px rgba(0, 0, 0, 0.2)
 }
@@ -175,7 +180,7 @@
 
 @media screen and (max-width: 800px) {
     .welcome-text {
-        font-size: 15vw;
+        font-size: 12vw;
     }
 
     .name-wrapper {
@@ -224,5 +229,10 @@
     .culture-image {
         width: 85%;
         height: 70vh;
+    }
+}
+@media screen and (max-width: 600px) {
+    .welcome-text {
+        font-size: 13vw;
     }
 }
